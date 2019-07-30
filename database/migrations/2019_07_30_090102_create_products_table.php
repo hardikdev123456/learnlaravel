@@ -10,10 +10,11 @@ class CreateProductsTable extends Migration
      * Run the migrations.
      *
      * @return void
+     * for create product table
      */
     public function up()
     {
-        Schema::create('products', function (Blueprint $table) {
+        Schema::create('product', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('category_id');
             $table->string('product_name');
@@ -27,6 +28,7 @@ class CreateProductsTable extends Migration
      * Reverse the migrations.
      *
      * @return void
+     * for reverse product table
      */
     public function down()
     {

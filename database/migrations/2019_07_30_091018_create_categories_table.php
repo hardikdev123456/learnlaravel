@@ -10,10 +10,11 @@ class CreateCategoriesTable extends Migration
      * Run the migrations.
      *
      * @return void
+     * for Create category Table
      */
     public function up()
     {
-        Schema::create('categories', function (Blueprint $table) {
+        Schema::create('category', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('category_name');
             $table->text('category_desc')->nullable();
@@ -23,7 +24,7 @@ class CreateCategoriesTable extends Migration
 
     /**
      * Reverse the migrations.
-     *
+     * for Reverse category Table
      * @return void
      */
     public function down()
