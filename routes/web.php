@@ -15,8 +15,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Auth::routes(['verify' => true]);
-Auth::routes(['verify' => true]);
-
+Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+/**
+ *  Product Routes
+ */
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/product-list', 'products\ProductsController@productListing');
+    Route::get('/add', 'products\ProductsController@addproduct');
+    Route::post('/addpro', 'products\ProductsController@addpro');
+
+});
+
+
+
